@@ -11,33 +11,34 @@
  
 <body>
 		<header class="page-head">
-				LOGO here
 		</header>
 		<div class="wrapper">
 		<h2 id="contents">Innehåll</h2>
-		<ul>
-				<li><a href="#intro">intro</a>
+		<ul class="list">
+				<li class="list__item"><a href="#intro">intro</a>
 				</li>
-				<li><a href="#bem">BEM</a>
+				<li class="list__item"><a href="#bem">BEM</a>
 				</li>
-				<li><a href="#block">Block</a>
+				<li class="list__item"><a href="#block">Block</a>
 				</li>
-				<li><a href="#element">Element</a>
+				<li class="list__item"><a href="#element">Element</a>
 				</li>
-				<li><a href="#modifier">Modifier</a>
+				<li class="list__item"><a href="#modifier">Modifier</a>
+				</li>
+				<li class="list__item"><a href="#dry">DRY</a>
+				</li>
+				<li class="list__item"><a href="#nosass">Dont mix tools</a>
 				</li>
 		</ul> <!-- Innehåll --> 
  
 		<h2 id="intro">Intro</h2>
 		<p class="text">
-		Nu är det ju så att vi ännu är ganska nybakade som utvecklare men en sak har vi upptäkt och det är hur svårt det är att namnge saker. </p>
+		Nu är det ju så att vi ännu är ganska nybakade som utvecklare men en sak har vi upptäckt och det är hur svårt det är att namnge saker. <code>my-app myoldapp2, .my-new-div-red, #my-old-div-green-on</code> </p>
  
 		<h2 id="bem">BEM</h2>
 		<p class="text">
-		Detta är bara ett exempel på hur vi kan presentera......
+		BEM är en förkortning. Det är ett sätt att dela in siten i olika logiska delar så man kan hantera informationsflödet som renderas.
 		<pre class="code">
-		<code> 
-
 .menu {
   // Blocket
 }
@@ -49,7 +50,7 @@
 .menu .menu--cool-menu-item {
   // Modifier, specifik variant av en menu-item
 }
-		</code></pre></p>
+		</pre></p>
  
 		<h2 id="block">Block</h2>
 		<pre class="code">
@@ -60,7 +61,7 @@
 .block { color: #042; }
 		</pre>
 		<p class="text">
-		Ett block är en självständig enhet med sin egna betydelse vilken representerar någon del av gränssnittet på sidan. Exempel på block är sidhuvud, sidfot eller knapp. De mest självklara blocken är html-taggar men beroende på hur hur komplex sidan så består den av fler olika boxar eller navigeringsmeny.
+		Ett block är en självständig enhet med sin egna betydelse vilken representerar någon del av gränssnittet på sidan. Exempel på block är sidhuvud, sidfot eller knapp. De mest självklara blocken är html-taggar men beroende på hur hur komplex sidan så består den av fler olika boxar eller en navigeringsmeny vilka alla kan vara egna block.
 		</p>
  
 		<h2 id="element">Element</h2>
@@ -101,9 +102,13 @@
   color: red;
 }
 		</pre>
+		<p class="text">
+		Namngivning av klasser till modifier av block eller element görs med dubbelt tankestreck efter namnet på klassen. <code>block--dark</code> eller <code>block__element--size-big</code>
+		</p>
 		<h2 id="dry">DRY</h2>
 		<p class="text">
 		En av fördelarna med BEM är att man måste sätta sig ner innan och bygga upp strukturerna innan och bygga ett hållbart skelett som </p>
+		<a href="Skiss.png"><img class="image image--size-big" src="Skiss.png"/></a>
  
 		<h2 id="nosass">Do not mix tools</h2>
 		<p class="text">
@@ -140,7 +145,8 @@
 <div class="text--flash">.button.button--warning { }
 .button.button__submit { }</div>
 		</pre>
-Man skall inte blanda verktyg in absurdum. Håll det enkelt. Block Element Modifier. KISS
+		<p class="text">
+Man skall inte blanda verktyg in absurdum.  Exemplet ovan visar vad som kan hända om man staplar klasser i SASS efter kompileringen får man ett annat resultat än det man väntat sig. Håll det enkelt. Block Element Modifier. KISS
 		</p>
 		</div> <!-- wrapper end -->
 </body>

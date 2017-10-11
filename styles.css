@@ -3,9 +3,18 @@ h2 {
 	font-family: Helvetica, sans-serif;
 }
 
-li{
-	font-size: 24px;
+a:link { text-decoration: none; }
+
+
+.list { 
+		list-style-type: none;
+		font-family: Palatino;
+		font-style: italic;
 }
+
+.list__item { font-size: 32px; }
+
+
 
 
 .text {
@@ -30,6 +39,13 @@ li{
 	to { color: red; }
 }
 
+.image {
+	width: 18em;
+}
+.image--size-small { width: 20em; } 
+.image--size-medium { width: 38em; } 
+.image--size-big { width: 48em; } 
+
 .wrapper {
     max-width: 48em;
     margin-right: auto;
@@ -40,8 +56,8 @@ li{
 
 .page-head {
     padding-top: 10%;
-    padding-bottom: 10%;
-    background-color: #2597c4;
+    padding-bottom: 4%;
+    background-color: #2587b4;
     margin-bottom: 38px;
 	}
 
