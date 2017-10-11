@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  		<link rel="stylesheet" href="styles.css">
+		<meta charset="UTF-8">
+	    <meta name="author" content="Anders Rochester">
+		<meta name="description" content="En enkel presentation av BEM ">
+	    <meta name="keywords" content="keywords,here">
+		<title>BEM - en kort presentation</title>
+    </head>
+ 
+<body>
+		<header class="page-head">
+				LOGO here
+		</header>
+		<div class="wrapper">
+		<h2 id="contents">Innehåll</h2>
+		<ul>
+				<li><a href="#intro">intro</a>
+				</li>
+				<li><a href="#bem">BEM</a>
+				</li>
+				<li><a href="#block">Block</a>
+				</li>
+				<li><a href="#element">Element</a>
+				</li>
+				<li><a href="#modifier">Modifier</a>
+				</li>
+		</ul> <!-- Innehåll --> 
+ 
+		<h2 id="intro">Intro</h2>
+		<p class="text">
+		Nu är det ju så att vi ännu är ganska nybakade som utvecklare men en sak har vi upptäkt och det är hur svårt det är att namnge saker. </p>
+ 
+		<h2 id="bem">BEM</h2>
+		<p class="text">
+		Detta är bara ett exempel på hur vi kan presentera......
+		<pre class="code">
+		<code> 
+
+.menu {
+  // Blocket
+}
+
+.menu .menu__menu-item {
+  // Element, mindre del av ett menu-block
+}
+
+.menu .menu--cool-menu-item {
+  // Modifier, specifik variant av en menu-item
+}
+		</code></pre></p>
+ 
+		<h2 id="block">Block</h2>
+		<pre class="code">
+HTML
+&lt;div class="block"&gt;...&lt;div&gt;
+
+CSS
+.block { color: #042; }
+		</pre>
+		<p class="text">
+		Ett block är en självständig enhet med sin egna betydelse vilken representerar någon del av gränssnittet på sidan. Exempel på block är sidhuvud, sidfot eller knapp. De mest självklara blocken är html-taggar men beroende på hur hur komplex sidan så består den av fler block såsom olika 'kort', login-ytor eller navigeringsmeny.
+		</p>
+ 
+		<h2 id="element">Element</h2>
+
+		<p class="text">
+		Element i detta sammanhang är de olika delarna av ett block. Tar vi navigeringsmenyn som exempel är de olika knapparna i menyn element av blocket menyn.</p>
+ 
+		<pre class="code">
+HTML
+&lt;div class="block"&gt;...&lt;div&gt;
+
+CSS
+.block { color: #042; }
+		</pre>
+		<h2 id="modifier">Modifier</h2>
+
+		<p class="text">
+		Ett bra gränssnitt interagerar med användaren och beroende på olika ageranden så uppdateras sidans olka delar. En knapp blir grön när man tryckt på den.</p>
+
+		<pre class="code">
+// exempel modifiers på en knapp
+.button .button--success {
+  color: green;
+}
+
+.button .button--warning {
+  color: red;
+}
+		</pre>
+		<h2 id="dry">DRY</h2>
+		<p class="text">
+		En av fördelarna med BEM är att man måste sätta sig ner innan och bygga upp strukturerna innan och bygga ett hållbart skelett som </p>
+ 
+		<h2 id="nosass">Do not mix tools</h2>
+		<p class="text">
+		I all utveckling, i alla projekt så tenderar det att växa. Det ligger i sakens natur och därför är det så viktigt att skalbarheten finns kvar och att man inte blir beroende av ett visst verktyg. Bygger vi sidor som skall presenteras av webläsare i någon form är vi hittills beroende av HTML och CSS i första hand. BEM ger dig en möjlighet att behålla ditt kreativa momentum. 
+		<pre class="code">
+// BEM
+.button { }
+.button--warning { }
+.button .button__submit { }
+
+// SCSS/LESS 
+
+.button {
+    .--warning {  }
+    .__submit {  }
+}
+
+// efter kompilering
+
+.button { }
+.button.--warning { }
+.button.button__submit { }
+
+// SCSS/LESS nesting /w BEM
+
+.button {
+	  .button--warning { }
+	  .button__submit { }
+}
+
+// efter kompilering
+
+.button { }
+  <div class="text--flash">.button.button--warning { }
+  .button.button__submit { }</div>
+		</pre>
+Man skall inte blanda verktyg in absurdum. Håll det enkelt. Block Element Modifier. KISS
+		</p>
+		</div> <!-- wrapper end -->
+</body>
+ 
+</html>
+
+
