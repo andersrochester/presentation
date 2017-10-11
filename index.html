@@ -53,35 +53,46 @@
  
 		<h2 id="block">Block</h2>
 		<pre class="code">
-HTML
+&lt;!-- HTML exempel --&gt;
 &lt;div class="block"&gt;...&lt;div&gt;
 
-CSS
+/* CSS exempel */
 .block { color: #042; }
 		</pre>
 		<p class="text">
-		Ett block är en självständig enhet med sin egna betydelse vilken representerar någon del av gränssnittet på sidan. Exempel på block är sidhuvud, sidfot eller knapp. De mest självklara blocken är html-taggar men beroende på hur hur komplex sidan så består den av fler block såsom olika 'kort', login-ytor eller navigeringsmeny.
+		Ett block är en självständig enhet med sin egna betydelse vilken representerar någon del av gränssnittet på sidan. Exempel på block är sidhuvud, sidfot eller knapp. De mest självklara blocken är html-taggar men beroende på hur hur komplex sidan så består den av fler olika boxar eller navigeringsmeny.
 		</p>
  
 		<h2 id="element">Element</h2>
 
 		<p class="text">
-		Element i detta sammanhang är de olika delarna av ett block. Tar vi navigeringsmenyn som exempel är de olika knapparna i menyn element av blocket menyn.</p>
+		Element i detta sammanhang är de olika delarna av ett block. Tar vi navigeringsmenyn som exempel är de olika knapparna i menyn element av blocket menyn. När vi namnger en klass till ett element använder vi oss av blockets klassnamn med elementnamnet som suffix och binder i hop det med dubbla understreck.</p>
  
 		<pre class="code">
-HTML
-&lt;div class="block"&gt;...&lt;div&gt;
+&lt;!-- HTML exempel --&gt;
 
-CSS
+&lt;div class="block"&gt;
+	...
+	&lt;span class="block__element"&gt;&lt;span&gt;
+&lt;/div&gt;
+
+/* CSS exempel */
 .block { color: #042; }
+.block__element { color: #042; }
 		</pre>
 		<h2 id="modifier">Modifier</h2>
 
 		<p class="text">
-		Ett bra gränssnitt interagerar med användaren och beroende på olika ageranden så uppdateras sidans olka delar. En knapp blir grön när man tryckt på den.</p>
+		Ett bra gränssnitt interagerar med användaren och beroende på olika ageranden så uppdateras sidans olka delar. Ett exempel kan vara när en knapp blir grön när man tryckt på den, eller när en box skall visas eller ej.</p>
 
 		<pre class="code">
-// exempel modifiers på en knapp
+/* exempel på ett block vars synlighet är på eller av */
+&lt;div class="block block--visibility"&gt; ... &lt;/div&gt;
+
+/* CSS */
+.block--visibility { }
+
+/* exempel modifiers på en knapp */
 .button .button--success {
   color: green;
 }
@@ -126,8 +137,8 @@ CSS
 // efter kompilering
 
 .button { }
-  <div class="text--flash">.button.button--warning { }
-  .button.button__submit { }</div>
+<div class="text--flash">.button.button--warning { }
+.button.button__submit { }</div>
 		</pre>
 Man skall inte blanda verktyg in absurdum. Håll det enkelt. Block Element Modifier. KISS
 		</p>
