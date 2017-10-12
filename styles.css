@@ -6,6 +6,9 @@ h2 {
 a:link { text-decoration: none; }
 
 
+.header {
+		display: flex;
+}
 .list { 
 		list-style-type: none;
 		font-family: Palatino;
@@ -33,6 +36,16 @@ a:link { text-decoration: none; }
     animation-direction: alternate;
     animation-play-state: running;
 }
+
+.logo {
+    position: relative;
+    width: 45%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.logo__image {}
 
 @keyframes flash {
 	from { color: #9f9; }
